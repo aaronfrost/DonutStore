@@ -10,7 +10,11 @@
         </div>
         <p>{{ donut.description }}</p>
         <p></p>
-        <a class="card" [href]="donut.nutritionalFacts" target="_blank" rel="noopener"
+        <a
+            class="card"
+            [href]="'http://localhost:3000' + donut.nutritionalFacts"
+            target="_blank"
+            rel="noopener"
             >Get Nutritional Facts</a
         >
     </ng-container>
