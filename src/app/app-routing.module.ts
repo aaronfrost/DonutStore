@@ -11,6 +11,7 @@ const routes: Routes = [
         path: 'donuts/:donutId',
         loadChildren: () => import('./donut/donut.module').then(m => m.DonutModule),
     },
+    { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
 ];
 
 @NgModule({

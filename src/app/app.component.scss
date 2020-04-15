@@ -16,3 +16,12 @@
     display: flex;
     flex-direction: column;
 }
+a.title {
+    text-decoration: none;
+    color: white;
+
+    &:hover,
+    &:visited {
+        color: white;
+    }
+}
