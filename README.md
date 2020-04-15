@@ -1,27 +1,49 @@
 # DonutStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0-rc.4.
+An Angular app that uses the [DonutAPI](git@github.com:aaronfrost/DonutAPI.git) to show and teach about
+building Jamstack apps in with Angular.
 
-## Development server
+## Step1
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In this branch we will install Scully to this project.
 
-## Code scaffolding
+Run the following to add Scully to this project:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+ng add @scullyio/init
+```
 
-## Build
+At this point, read the changelog in the terminal to see what was changed about your app.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Noteworthy changes:
 
-## Running unit tests
+-   `app.module` - Imported the `ScullyLibModule`.
+-   `polyfils.ts` - Updated to add some zone.js functionality.
+-   `sculy.DonutStore.config.js` - Your new scully config file has been created.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## How to Verify
 
-## Running end-to-end tests
+Great! So we have installed Scully, but now what do we do? Well, we need to verify that it successfully
+installed Scully and that our project is able to be pre-rendered with Scully. To do this, run the
+following steps from your terminal:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+-   `ng build` - You need to run a build. Scully requires it prior to pre-rendering.
+-   `npm run scully` - Now run Scully!
 
-## Further help
+When that runs, notice that it generates our `/about` and `/` routes. But it shows you a warning
+about your route `/donuts/:donutId`. In the next step we will address that warning.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+But you can now check the contents of your `/dist/static` directory and see that your `/index.html`
+`/about/index.html` pages were both pre-rendered to HTML and CSS.
+
+Also notice that the scully build created a `scully-routes.json` file with a list of all the routes in
+your app. This file will come in handy later.
+
+## Now what?
+
+To move on, stash your changes and checkout the `step2` branch.
+
+```bash
+git stash //hides your changes you just made
+git checkout step2
+```
