@@ -3,47 +3,49 @@
 An Angular app that uses the [DonutAPI](git@github.com:aaronfrost/DonutAPI.git) to show and teach about
 building Jamstack apps in with Angular.
 
-## Step1
+## Step2
 
-In this branch we will install Scully to this project.
+In this branch we will teach Scully how to find all of the different Donut IDs so that it can
+pre-render our `/donuts/:donutId` route.
 
-Run the following to add Scully to this project:
+In order to do this we will need to build a `route plugin`, which is the kind of plugin we can
+build to help show Scully how to find all of the routes in our app (including, and especially,
+parameterized routes).
+
+To do this open your `scully.DonutStore.config.js` and add the following config in the routes section:
 
 ```bash
-ng add @scullyio/init
+
+exports.config = {
+    ...
+    routes: {
+        '/donuts/:donutId': {
+            type: 'json',
+            donudId: {
+                url: 'http://localhost:3000/donuts',
+                property: 'id'
+            }
+        }
+    }
+}
 ```
 
-At this point, read the changelog in the terminal to see what was changed about your app.
+Once you've added this, you can run the scully build again:
 
-Noteworthy changes:
+```bash
+npm run scully
+```
 
--   `app.module` - Imported the `ScullyLibModule`.
--   `polyfils.ts` - Updated to add some zone.js functionality.
--   `sculy.DonutStore.config.js` - Your new scully config file has been created.
+You should see that all of your donut pages will now visited and pre-rendered.
 
-## How to Verify
-
-Great! So we have installed Scully, but now what do we do? Well, we need to verify that it successfully
-installed Scully and that our project is able to be pre-rendered with Scully. To do this, run the
-following steps from your terminal:
-
--   `ng build` - You need to run a build. Scully requires it prior to pre-rendering.
--   `npm run scully` - Now run Scully!
-
-When that runs, notice that it generates our `/about` and `/` routes. But it shows you a warning
-about your route `/donuts/:donutId`. In the next step we will address that warning.
-
-But you can now check the contents of your `/dist/static` directory and see that your `/index.html`
-`/about/index.html` pages were both pre-rendered to HTML and CSS.
-
-Also notice that the scully build created a `scully-routes.json` file with a list of all the routes in
-your app. This file will come in handy later.
+IMPORTANT: It is important that you have the DonutAPI project running locally on your machine for
+this demo!
 
 ## Now what?
 
-To move on, stash your changes and checkout the `step2` branch.
+To move on, stash your changes and checkout the `step3` branch.
 
 ```bash
 git stash //hides your changes you just made
-git checkout step2
+git checkout step3
 ```
