@@ -1,3 +1,11 @@
-.card .donut-img {
-    height: 60px;
+@media screen and (max-width: 767px) {
+    .donut-img {
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .donut-img {
+        height: 60px;
+    }
 }
