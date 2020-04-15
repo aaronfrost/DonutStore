@@ -12,6 +12,7 @@ const routes: Routes = [
         loadChildren: () => import('./donut/donut.module').then(m => m.DonutModule),
     },
     { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
+    { path: 'blog', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) },
 ];
 
 @NgModule({

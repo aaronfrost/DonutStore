@@ -3,6 +3,12 @@ exports.config = {
     projectName: 'DonutStore',
     outDir: './dist/static',
     routes: {
+        '/blog/:slug': {
+            type: 'contentFolder',
+            slug: {
+                folder: './blog',
+            },
+        },
         '/donuts/:donutId': {
             type: 'json',
             donutId: {
