@@ -3,7 +3,7 @@
 
 <div class="card-container">
     <a *ngFor="let d of donuts" class="card" routerLink="/donuts/{{ d.id }}">
-        <img [src]="d.img" class="donut-img" />
+        <img [src]="'http://localhost:3000' + d.img" class="donut-img" />
 
         <span>{{ d.title }}</span>
 
