@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { TransferStateService } from '@scullyio/ng-lib';
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -10,8 +11,11 @@ import { environment } from '../../environments/environment';
 export class DonutsComponent implements OnInit {
     donuts: any[] = [];
 
-    constructor(private http: HttpClient) {
-        const donuts$ = this.http.get<any[]>(`${environment.API.BASE_URL}/donuts`);
+    constructor(private http: HttpClient, private transferState: TransferStateService) {
+        let donuts$ = this.transferState.useScullyTransferState(
+            'donuts',
+            this.http.get<any[]>(`${environment.API.BASE_URL}/donuts`),
+        );
 
         donuts$.subscribe(res => {
             this.donuts = res;
