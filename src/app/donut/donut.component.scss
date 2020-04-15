@@ -1,0 +1,11 @@
+.banner img {
+    width: calc(100vw - 5vw);
+}
+.donut {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    img {
+        height: 30vh;
+    }
+}

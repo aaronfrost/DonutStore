@@ -1,0 +1,20 @@
+<h2>We hope you enjoy <i>our</i> Donuts</h2>
+<p>Enjoy the seasonal variety. <i>(they're definitely our donuts)</i></p>
+
+<div class="card-container">
+    <a *ngFor="let d of donuts" class="card" routerLink="/donuts/{{ d.id }}">
+        <img [src]="d.img" class="donut-img" />
+
+        <span>{{ d.title }}</span>
+
+        <svg
+            class="material-icons"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+        >
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+        </svg>
+    </a>
+</div>

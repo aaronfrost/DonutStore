@@ -1,0 +1,17 @@
+<a class="back-to-all" routerLink="/">< see all Donuts</a>
+<div class="card-container">
+    <ng-container *ngIf="donut">
+        <div class="banner">
+            <img [src]="donut.bannerUrl" />
+        </div>
+        <h2>{{ donut.title }}</h2>
+        <div class="donut">
+            <img [src]="donut.img" [alt]="donut.imgAlt" />
+        </div>
+        <p>{{ donut.description }}</p>
+        <p></p>
+        <a class="card" [routerLink]="donut.nutritionalFacts" target="_blank" rel="noopener"
+            >Get Nutritional Facts</a
+        >
+    </ng-container>
+</div>
