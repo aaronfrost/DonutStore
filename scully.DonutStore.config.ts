@@ -1,15 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.config = {
+export const config = {
     projectRoot: './src',
     projectName: 'DonutStore',
     outDir: './dist/static',
     routes: {
         '/blog/:slug': {
-            type: 'contentFolder',
-            slug: {
-                folder: "./blog"
-            }
+        type: 'contentFolder',
+        slug: {
+            folder: "./blog"
+        }
         },
         '/donuts/:donutId': {
             type: 'json',
