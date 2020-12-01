@@ -10,7 +10,8 @@
     <span><a routerLink="/" class="title">Welcome To My Donut Store</a></span>
     <div class="spacer"></div>
     <a
-        aria-label="Angular on twitter"
+        *ngIf="showLogo"
+        aria-label="Scully on twitter"
         target="_blank"
         rel="noopener"
         href="https://twitter.com/scullyio"

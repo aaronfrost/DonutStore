@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { isScullyRunning, isScullyGenerated } from '@scullyio/ng-lib';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'DonutStore';
+    title = 'DonutStore';
+
+    showLogo = !isScullyRunning();
 }
