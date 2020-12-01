@@ -1,0 +1,6 @@
+<!-- This is where Scully will inject the static HTML -->
+<scully-content></scully-content>
+
+<ul>
+    <li *ngFor="let route of blogs$ | async">-- {{ route | json }} --</li>
+</ul>
