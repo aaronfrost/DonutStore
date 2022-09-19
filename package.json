@@ -22,11 +22,6 @@
     "@angular/platform-browser": "~11.0.0",
     "@angular/platform-browser-dynamic": "~11.0.0",
     "@angular/router": "~11.0.0",
-    "@schematics/angular": "^9.1.1",
-    "@scullyio/init": "^1.0.1",
-    "@scullyio/ng-lib": "^1.0.0",
-    "@scullyio/scully": "^1.0.0",
-    "@scullyio/scully-plugin-critical-css": "0.0.2",
     "rxjs": "~6.6.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -64,8 +59,7 @@
   },
   "lint-staged": {
     "*.{js,json,css,scss,less,md,ts,html,component.html}": [
-      "prettier --write",
-      "git add"
+   
     ]
   }
 }

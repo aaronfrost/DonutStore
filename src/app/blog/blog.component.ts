@@ -13,8 +13,6 @@ declare var ng: any;
     encapsulation: ViewEncapsulation.Emulated,
 })
 export class BlogComponent implements OnInit {
-    ngOnInit() {}
-
     blogs$ = this.scullyRoutes.available$
         .pipe
         // map(routes => routes.filter(r => r.title && r.published == 'published')),
@@ -25,4 +23,6 @@ export class BlogComponent implements OnInit {
         private route: ActivatedRoute,
         public scullyRoutes: ScullyRoutesService,
     ) {}
+
+    ngOnInit() {}
 }
